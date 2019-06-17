@@ -1,0 +1,15 @@
+.example-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.example-container > * {
+  width: 100%;
+}
+.form {
+  margin: auto;
+  width: 50%;
+  border: 3px solid white;
+  padding: 10px;
+  text-align: center;
+}
