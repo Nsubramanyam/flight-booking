@@ -1,0 +1,61 @@
+<div class="container" fxLayout="row wrap" fxLayoutGap="0px">
+<div class="item" fxFlex="100%" >
+    <form class="example-form" >
+    <mat-form-field class="example-full-width" appearance="outline">
+      <input type="text" placeholder="From to" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto">
+      <mat-autocomplete #auto="matAutocomplete">
+        <mat-option *ngFor="let option of options" [value]="option">
+          {{option}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+    <button (click)="swap()"><mat-icon>swap_horiz</mat-icon></button>
+    <mat-form-field class="example-full-width" appearance="outline">
+        <input type="text" placeholder="To" aria-label="Number" matInput [formControl]="myControl1" [matAutocomplete]="auto">
+        <mat-autocomplete #auto="matAutocomplete">
+          <mat-option *ngFor="let option of options" [value]="option">
+            {{option}}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+    
+      <mat-form-field class="example-full-width"   appearance="outline">
+        <input matInput [matDatepicker]="picker" placeholder="Deprature" name="dp1">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      
+      <mat-form-field  class="example-full-width"  appearance="outline">
+          <input matInput  [matDatepicker]="picker1" placeholder="Return" name="dp2">
+          <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+          <mat-datepicker #picker1></mat-datepicker>
+        </mat-form-field>
+      
+        <mat-form-field class="example-full-width"   appearance="outline">
+            <mat-label>Traveller(s)</mat-label>
+            <select matNativeControl  name="car">
+              <option value="" selected></option>
+              <option *ngFor="let car of cars" [value]="car.value">
+                {{car.viewValue}}
+              </option>
+            </select>
+          </mat-form-field>
+         
+          <mat-form-field class="example-full-width"   appearance="outline">
+              <mat-label>Class</mat-label>
+              <mat-select disableRipple>
+                <mat-option value="1">Economy</mat-option>
+                <mat-option value="2">Bussiness</mat-option>
+               
+              </mat-select>
+            </mat-form-field>
+            
+            <button (click)="searchFlights()">Search</button>       
+ </form>
+</div>
+
+
+
+
+ </div>
+ 
